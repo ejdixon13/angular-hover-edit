@@ -1,0 +1,17 @@
+{
+  "name": "angular-hover-edit",
+  "authors": [
+    "Eric John Dixon <edixon@ldschurch.org>"
+  ],
+  "description": "AngularJS directive to add inline editing to elements that reveals itself on hover",
+  "main": "angular-hover-edit.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
