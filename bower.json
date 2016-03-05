@@ -4,7 +4,7 @@
     "Eric John Dixon <edixon@ldschurch.org>"
   ],
   "description": "AngularJS directive to add inline editing to elements that reveals itself on hover",
-  "main": "angular-hover-edit.js",
+  "main": "/src/angular-hover-edit.js",
   "license": "MIT",
   "homepage": "",
   "ignore": [
