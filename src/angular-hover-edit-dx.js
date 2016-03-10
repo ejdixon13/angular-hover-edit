@@ -21,7 +21,10 @@
                     readOnly: '=readOnly'
                 },
                 transclude: true,
-                templateUrl: 'app/sharedServices/hover-edit/hover-edit-tpl.html',
+                templateUrl: '<div class="animated-element edit-container" ' +
+                'ng-mouseover="(!editMode.on) ? triggerhoverAnimation(false) : \'\'" ' +
+                'ng-mouseleave="(!editMode.on) ? triggerhoverAnimation(true) : \'\'" ' +
+                'ng-click="setEditMode()"ng-transclude></div>',
                 link: function (scope, element, attrs, ctrls) {
                     var elemIcon = angular.element('<span class="top-rt-corner-box"><i class="lds-icon lds-icon-pencil"></i></span>');
                     var saveExitIcons = angular.element('<div class="save-exit-btns">'+
