@@ -20,6 +20,8 @@ Load the script files in your application:
  <link rel="stylesheet" href="bower_components/angular-hover-edit/src/hover-edit.css">
 
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/angular-spinner/angular-spinner.js"></script>
 <script type="text/javascript" src="bower_components/angular-hover-edit/src/angular-hover-edit-dx.min.js"></script>
 ```
 include the GideonldsIcn-Regular.otf in a /fonts folder on the base directory
@@ -27,7 +29,7 @@ include the GideonldsIcn-Regular.otf in a /fonts folder on the base directory
 Add the specific module to your dependencies:
 
 ```javascript
-angular.module('myApp', ['angularHoverEdit', ...])
+angular.module('myApp', ['angularSpinner', 'angularHoverEdit', ...])
 ```
 
 Now surround any element you want to have inline editing

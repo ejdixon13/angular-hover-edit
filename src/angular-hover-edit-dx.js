@@ -12,13 +12,13 @@
                 restrict: 'EA',
                 require: ['?hoverEditPermissions', '?messageService'],
                 scope: {
-                    saveFn: '=saveFn',
-                    addFn: '=addFn',
-                    cancelFn: '=cancelFn',
-                    unitToSave: '=unitToSave',
-                    editMode: '=editMode', //external trigger
+                    saveFn: '=?saveFn',
+                    addFn: '=?addFn',
+                    cancelFn: '=?cancelFn',
+                    unitToSave: '=?unitToSave',
+                    editMode: '=?editMode', //external trigger
                     formName: '@formName',
-                    readOnly: '=readOnly'
+                    readOnly: '=?readOnly'
                 },
                 transclude: true,
                 template: '<div class="animated-element edit-container" ' +
@@ -173,6 +173,16 @@
                     }
                 }
             };
+        }])
+        .directive('utilSpinner', [function () {
+            return {
+                restrict: 'E',
+                template: '<span us-spinner="{radius:4, width:2, length: 2, lines: 9, scale: 1.5, corners: 1.0, speed: 2.0, hwaccel: true, trail: 100, className: className}"></span>',
+                scope: {
+                    className: '@className'
+                }
+            };
+
         }]);
 
 })();
