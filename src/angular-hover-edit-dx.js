@@ -21,7 +21,7 @@
                     readOnly: '=readOnly'
                 },
                 transclude: true,
-                templateUrl: '<div class="animated-element edit-container" ' +
+                template: '<div class="animated-element edit-container" ' +
                 'ng-mouseover="(!editMode.on) ? triggerhoverAnimation(false) : \'\'" ' +
                 'ng-mouseleave="(!editMode.on) ? triggerhoverAnimation(true) : \'\'" ' +
                 'ng-click="setEditMode()"ng-transclude></div>',
