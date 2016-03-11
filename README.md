@@ -4,6 +4,9 @@ Apply inline edit capability to element. On hover over the element, the pencil l
 ## Requirements
 
 - AngularJS
+- Spin.js
+- angular-spinner
+- Underscore.js
 
 ## Usage
 
@@ -52,9 +55,9 @@ Pass in save functions or cancel functions
 ```
 
 Attributes available:
-* `save-fn` - pass in a function that will be called upon click of the save button.
-* `add-fn` - pass in a function that will be called upon click of the add button. (Add button only shows up if add-fn is present with a valid function)
+* `save-fn` - Pass in a function that will be called upon click of the save button.
+* `add-fn` - Pass in a function that will be called upon click of the add button. (Add button only shows up if add-fn is present with a valid function)
 * `unit-to-save` - This is a parameter that can be passed to your save function.
-* `edit-mode` - external two-way bound trigger for edit mode.
+* `edit-mode` - External two-way bound trigger for edit mode.
 * `form-name` - If you pass in a form, the save will not be performed if the form is invalid.
-* `read-only` - external two-way bound trigger to determine if edit mode is possible
+* `read-only` - External two-way bound trigger to determine if edit mode is possible
