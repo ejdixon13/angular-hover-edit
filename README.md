@@ -20,12 +20,12 @@ bower install angular-hover-edit
 Load the script files in your application:
 
 ```html
-<link rel="stylesheet" href="bower_components/angular-hover-edit/src/hover-edit.css">
+<link rel="stylesheet" href="bower_components/angular-hover-edit/dist/angular-hover-edit.css">
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/spin.js/spin.js"></script>
 <script src="bower_components/angular-spinner/angular-spinner.js"></script>
-<script src="bower_components/angular-hover-edit/src/angular-hover-edit-dx.min.js"></script>
+<script src="bower_components/angular-hover-edit/dist/angular-hover-edit-dx.min.js"></script>
 ```
 include the GideonldsIcn-Regular.otf in a /fonts folder on the base directory
 
