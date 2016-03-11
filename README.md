@@ -50,3 +50,11 @@ Pass in save functions or cancel functions
     </div>
 </hover-edit>
 ```
+
+Attributes available:
+* `save-fn` - pass in a function that will be called upon click of the save button.
+* `add-fn` - pass in a function that will be called upon click of the add button. (Add button only shows up if add-fn is present with a valid function)
+* `unit-to-save` - This is a parameter that can be passed to your save function.
+* `edit-mode` - external two-way bound trigger for edit mode.
+* `form-name` - If you pass in a form, the save will not be performed if the form is invalid.
+* `read-only` - external two-way bound trigger to determine if edit mode is possible

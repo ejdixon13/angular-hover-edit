@@ -7,6 +7,25 @@ $row-odd-color: rgba(161,195,207,.2);
     font-style: normal;
 }
 
+.box-border
+{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.animated-element.box-border-add,
+.animated-element.box-border-remove
+{
+    -webkit-transition: .3s linear all;
+    transition: .3s linear all;
+}
+
+.animated-element.box-border-add { border-color: #ffffff; }
+.animated-element.box-border-add.box-border-add-active { border-color: gainsboro; }
+.animated-element.box-border-remove { border-color: gainsboro; }
+.animated-element.box-border-remove.box-border-remove-active { border-color: #ffffff; }
+
 .lds-icon {
     font-family: 'LdsIcons';
     font-style: normal;
@@ -20,6 +39,11 @@ $row-odd-color: rgba(161,195,207,.2);
 .lds-icon-pencil:before {
     font-size: 18px;
     content: "\e90a";
+}
+
+.lds-icon-add:before {
+    -webkit-font-smoothing: auto;
+    content: "\ea04";
 }
 
 .top-rt-corner-box {

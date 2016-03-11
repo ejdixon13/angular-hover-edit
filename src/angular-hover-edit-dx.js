@@ -55,7 +55,7 @@
                         }
                     });
 
-                    if(!scope.readOnly && !ctrls[0] || ctrls[0].hasPermissions) {
+                    if(!scope.readOnly && (!ctrls[0] || ctrls[0].hasPermissions)) {
                         scope.triggerhoverAnimation = triggerhoverAnimation;
                         scope.setEditMode = setEditMode;
                     }
@@ -75,7 +75,7 @@
                     function triggerhoverAnimation(leaving) {
                         if (!scope.editMode.on) {
                             //var outerBox = document.querySelector("#editContainer");
-                            var outerBox = element.children('.editContainer');
+                            var outerBox = element.children('.editContainer')[0];
 
                             if (outerBox !== null)
                             {
@@ -112,7 +112,9 @@
                     //Save Icon Click
                     function save() {
                         //if there is a form associated with the element
-                        var form = $('#' + scope.formName);
+                        var form = angular.element(document.getElementById(scope.formName));
+
+                        //Only able to save if form is valid
                         if (!form || !form.hasClass('ng-invalid')) {
                             if (_.isFunction(scope.saveFn)) {
                                 scope.showSpinner = true;
@@ -147,24 +149,23 @@
 
                     // initial creation of elements
                     function setupElements() {
-                        if(scope.addFn) {
+                        if(_.isFunction(scope.addFn)) {
                             editBox.after(addIcon);
                             $compile(addIcon)(scope);
                         }
-                        if(!ctrls[0] || ctrls[0].hasPermissions) {
+                        if (!scope.readOnly && (!ctrls[0] || ctrls[0].hasPermissions)) {
                             editBox.append(elemIcon);
+                            $compile(elemIcon)(scope);
+                        }
+                        if(!ctrls[0] || ctrls[0].hasPermissions) {
                             editBox.after(saveSpinner);
                             editBox.after(saveExitIcons);
+                            $compile(saveSpinner)(scope);
+                            $compile(saveExitIcons)(scope);
                         }
-                        //editBox.after(exitIcon);
+
                         editBox.addClass('edit-box');
                         element.addClass('disabled');
-                        $compile(elemIcon)(scope);
-                        $compile(saveSpinner)(scope);
-                        $compile(saveExitIcons)(scope);
-                        //$compile(exitIcon)(scope);
-
-
                     }
 
                     function hideEditElements() {
