@@ -37,7 +37,7 @@ angular.module('myApp', ['angularSpinner', 'angularHoverEdit', ...])
 
 Now surround any element you want to have inline editing
 
-```
+```html
 <hover-edit>
     <div>
         <input type="text"></input>
@@ -46,11 +46,18 @@ Now surround any element you want to have inline editing
 ```
 
 Pass in save functions or cancel functions
-```
+```html
 <hover-edit save-fn="saveFn" cancel-fn="cancelfn">
     <div>
         <input type="text"></input>
     </div>
+</hover-edit>
+```
+
+If you would like to have links within the hover-edit element, so that clicking on the link will not activate edit mode, use the included hover-edit-link directive
+```html
+<hover-edit>
+    <hover-edit-link link="/examplePath"></hover-edit-link>
 </hover-edit>
 ```
 

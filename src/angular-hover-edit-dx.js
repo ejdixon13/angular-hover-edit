@@ -37,6 +37,9 @@
 
 
                     var editBox = element.children('.editContainer');
+                    scope.cancelClick = function cancelClick(event) {
+                        event;
+                    };
 
                     scope.$watch('readOnly', function(nv, ov) {
                         if (nv != ov) {
@@ -184,6 +187,28 @@
                 }
             };
 
+        }])
+        .directive('hoverEditLink', [function(){
+            return {
+                restrict: 'EA',
+                template: '<span class="hover-edit-link" ng-click="hoverEditLink.redirectToLink($event)" ng-transclude></span>',
+                transclude: true,
+                scope: {
+                    link: '@link'
+                },
+                bindToController: true,
+                controllerAs: 'hoverEditLink',
+                controller: ['$location', function($location){
+                    var hoverEditLink = this;
+                    hoverEditLink.redirectToLink = function(event) {
+                        //disallow edit mode if link is clicked
+                        event.stopPropagation();
+
+                        // will add '/' if missing
+                        $location.path(hoverEditLink.link);
+                    }
+                }]
+            }
         }]);
 
 })();

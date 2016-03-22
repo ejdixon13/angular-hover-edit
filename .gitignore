@@ -92,10 +92,5 @@ Icon
 
 ###OUR Ignores
 node_modules/
-build/
-lib/
-public/javascripts/lib/
+bower_components/
 .sass-cache
-html-angular-validate-report.json
-util
-styles/app.css

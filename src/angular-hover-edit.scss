@@ -289,3 +289,16 @@ hover-edit {
     }
 }
 
+.hover-edit-link {
+    color: #147ea7;
+    text-decoration: none;
+    &:link, &:visited {
+        border:none;
+        text-decoration:underline;
+    }
+    &:hover {
+        text-decoration: none;
+        color: #23527c;
+    }
+}
+

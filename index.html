@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularHoverEdit">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/angular-hover-edit.css">
+</head>
+<body>
+
+<div ng-controller="Ctrl">
+<hover-edit add-fn="{item: 1}" unit-to-save="{item: 1}">
+    Text Box:
+    <input type="text" ng-model="text"/>
+    <hover-edit-link link="/">Link</hover-edit-link>
+</hover-edit>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/angular-spinner/angular-spinner.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="src/angular-hover-edit-dx.js"></script>
+<script type="application/javascript">
+    function addFn(){console.log('added');}
+    angular.module('angularHoverEdit').controller('Ctrl', ['$scope', function($scope){
+
+    }]);
+
+</script>
+</body>
+</html>
