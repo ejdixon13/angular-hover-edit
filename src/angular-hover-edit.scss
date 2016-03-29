@@ -215,6 +215,21 @@ hover-edit.disabled:hover {
 hover-edit {
     position: relative;
 
+    .table {
+        tbody {
+            tr {
+                td {
+                    padding-bottom: 4px;
+                    vertical-align: middle;
+                    border-top: none !important;
+                    position: relative;
+                    input {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
     .top-rt-corner-box {
         opacity: 0;
         color: $black;
