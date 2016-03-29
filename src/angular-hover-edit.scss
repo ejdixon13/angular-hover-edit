@@ -101,6 +101,21 @@ $row-odd-color: rgba(161,195,207,.2);
 //ON VIEW
 hover-edit.disabled{
 
+    .table {
+        tbody {
+            tr {
+                td {
+                    select {
+                        padding-left: 0;
+                    }
+                    input {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .top-rt-corner-box {
         opacity: 1;
         color: $black;
@@ -225,6 +240,7 @@ hover-edit {
                     position: relative;
                     input {
                         margin-bottom: 5px;
+                        padding-bottom: 5px;
                     }
                 }
             }
