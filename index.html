@@ -8,11 +8,36 @@
 <body>
 
 <div ng-controller="Ctrl">
-<hover-edit add-fn="{item: 1}" unit-to-save="{item: 1}">
-    Text Box:
-    <input type="text" ng-model="text"/>
-    <hover-edit-link link="/">Link</hover-edit-link>
-</hover-edit>
+    <hover-edit>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>No.</th>
+                <th>Meeting Manager</th>
+                <th>Assigner 1</th>
+                <th>Assigner 2</th>
+                <th>Type</th>
+                <th class="text-center">In Meeting</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Next Steps</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><select class="form-control"><option>Manager</option></select></td>
+                <td><select class="form-control"><option>Assigner</option></select></td>
+                <td><select class="form-control"><option>Assigner</option></select></td>
+                <td><select class="form-control"><option>Type</option></select></td>
+                <td class="text-center">13</td>
+                <td><select class="form-control"><option>Tuesday</option></select></td>
+                <td><select class="form-control"><option>Time</option></select></td>
+                <td>Preview Assign</td>
+            </tr>
+            </tbody>
+        </table>
+    </hover-edit>
 </div>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/spin.js/spin.js"></script>

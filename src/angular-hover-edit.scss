@@ -149,6 +149,9 @@ hover-edit.disabled{
         resize: none !important;
     }
 
+    .clear-input {
+        display: none;
+    }
     checkbox-list {
         .checkbox-list {
             border: 1px solid #ffffff;
@@ -170,6 +173,7 @@ hover-edit.disabled{
             }
         }
     }
+
     .hide-on-disabled{
         display: none;
     }
