@@ -28,11 +28,11 @@
                 link: function (scope, element, attrs, ctrls) {
                     var elemIcon = angular.element('<span class="top-rt-corner-box"><i class="lds-icon lds-icon-pencil"></i></span>');
                     var saveExitIcons = angular.element('<div class="save-exit-btns">'+
-                        '<button class="btn btn-danger-hover" ng-disabled="showSpinner" ng-show="editMode.on" ng-click="functions.cancel()" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Cancel Changes" style="float: right">CANCEL</button>' +
+                        '<button class="btn btn-danger-hover" ng-disabled="showSpinner" type="button" ng-show="editMode.on" ng-click="functions.cancel()" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Cancel Changes" style="float: right">CANCEL</button>' +
                         '<button class="btn btn-success-hover" ng-disabled="showSpinner" type="submit" form="{{formName}}" ng-show="editMode.on" ng-click="functions.save()" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Save Changes" style="float: right;margin-right: 2px">SAVE</button>' +
 
                         '</div>');
-                    var addIcon = angular.element('<button class="margin-bot-5 btn btn-default add-btn add-restriction" ng-show="editMode.on" ng-click="setEditMode(true)" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Add Restriction"><i class="lds-icon lds-icon-add"></i> </button>');
+                    var addIcon = angular.element('<button class="margin-bot-5 btn btn-default add-btn add-restriction" type="button" ng-show="editMode.on" ng-click="setEditMode(true)" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Add Restriction"><i class="lds-icon lds-icon-add"></i> </button>');
                     var saveSpinner = angular.element('<div class="hover-edit-spinner" ng-show="showSpinner"><util-spinner></util-spinner></div>');
 
 
