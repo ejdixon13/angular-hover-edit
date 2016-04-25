@@ -191,21 +191,25 @@
         .directive('hoverEditLink', [function(){
             return {
                 restrict: 'EA',
-                template: '<span class="hover-edit-link" ng-click="hoverEditLink.redirectToLink($event)" ng-transclude></span>',
+                template: '<span class="hover-edit-link" ng-click="hoverEditLink.handleLinkAction($event)" ng-transclude></span>',
                 transclude: true,
                 scope: {
-                    link: '@link'
+                    link: '@link',
+                    onClick: '&onClick'
                 },
                 bindToController: true,
                 controllerAs: 'hoverEditLink',
                 controller: ['$location', function($location){
                     var hoverEditLink = this;
-                    hoverEditLink.redirectToLink = function(event) {
+                    hoverEditLink.handleLinkAction = function(event) {
                         //disallow edit mode if link is clicked
                         event.stopPropagation();
-
-                        // will add '/' if missing
-                        $location.path(hoverEditLink.link);
+                        if (hoverEditLink.onClick) {
+                            hoverEditLink.onClick();
+                        } else {
+                            // will add '/' if missing
+                            $location.path(hoverEditLink.link);
+                        }
                     }
                 }]
             }
