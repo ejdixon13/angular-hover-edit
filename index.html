@@ -9,7 +9,8 @@
 <body>
 
 <div ng-controller="Ctrl">
-    <hover-edit>
+    <input ng-model="check" type="checkbox" ng-change="swapFn(check)">
+    <hover-edit add-fn="fn">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -46,9 +47,13 @@
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="src/angular-hover-edit-dx.js"></script>
 <script type="application/javascript">
-    function addFn(){console.log('added');}
-    angular.module('angularHoverEdit').controller('Ctrl', ['$scope', function($scope){
 
+    angular.module('angularHoverEdit').controller('Ctrl', ['$scope', function($scope){
+        $scope.swapFn = function(check) {
+            $scope.fn = (check) ? addFn : '';
+        };
+        $scope.fn = addFn;
+        function addFn(){console.log('added');}
     }]);
 
 </script>

@@ -32,7 +32,7 @@
                         '<button class="btn btn-success-hover" ng-disabled="showSpinner" type="submit" form="{{formName}}" ng-show="editMode.on" ng-click="functions.save()" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Save Changes" style="float: right;margin-right: 2px">SAVE</button>' +
 
                         '</div>');
-                    var addIcon = angular.element('<button class="margin-bot-5 btn btn-default add-btn add-restriction" type="button" ng-show="editMode.on" ng-click="setEditMode(true)" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Add Restriction"><i class="lds-icon lds-icon-add"></i> </button>');
+                    var addIcon = angular.element('<button class="margin-bot-5 btn btn-default add-btn add-restriction" type="button" ng-show="showAddIcon()" ng-click="setEditMode(true)" tooltip-popup-delay="500" tooltip-append-to-body="true" tooltip="Add Restriction"><i class="lds-icon lds-icon-add"></i> </button>');
                     var saveSpinner = angular.element('<div class="hover-edit-spinner" ng-show="showSpinner"><util-spinner></util-spinner></div>');
 
 
@@ -73,6 +73,11 @@
                     scope.editMode = { on : false};
                     scope.showIcon = false;
                     scope.showSpinner = false;
+                    scope.showAddIcon = showAddIcon;
+
+                    function showAddIcon() {
+                        return _.isFunction(scope.addFn) && scope.editMode.on;
+                    }
 
                     //trigger hover animation for mouseover(leaving = false) or mouseleaving (leaving = true)
                     function triggerhoverAnimation(leaving) {
@@ -102,7 +107,7 @@
 
                     // clicking box for editing
                     function setEditMode (addMode) {
-                        if(addMode && _.isFunction(scope.addFn())) {
+                        if(addMode && _.isFunction(scope.addFn)) {
                             scope.addFn();
                         }
                         var outerBox = element.children('.editContainer');
@@ -152,10 +157,8 @@
 
                     // initial creation of elements
                     function setupElements() {
-                        if(_.isFunction(scope.addFn)) {
-                            editBox.after(addIcon);
-                            $compile(addIcon)(scope);
-                        }
+                        editBox.after(addIcon);
+                        $compile(addIcon)(scope);
                         if (!scope.readOnly && (!ctrls[0] || ctrls[0].hasPermissions)) {
                             editBox.append(elemIcon);
                             $compile(elemIcon)(scope);
