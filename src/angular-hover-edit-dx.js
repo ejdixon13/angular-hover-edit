@@ -197,12 +197,12 @@
                 template: '<span class="hover-edit-link" ng-click="hoverEditLink.handleLinkAction($event)" ng-transclude></span>',
                 transclude: true,
                 scope: {
-                    link: '@link',
-                    onClick: '&onClick'
+                    link: '@?link',
+                    onClick: '&?onClick'
                 },
                 bindToController: true,
                 controllerAs: 'hoverEditLink',
-                controller: ['$location', function($location){
+                controller: ['$location', '$rootScope', function($location, $rootScope){
                     var hoverEditLink = this;
                     hoverEditLink.handleLinkAction = function(event) {
                         //disallow edit mode if link is clicked
