@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "angular": "~1.4.0",
-    "underscore": "~1.8.3",
-    "angular-spinner": "~0.6.2"
+    "underscore": "1.8.3",
+    "angular-spinner": "0.8.1"
   }
 }
