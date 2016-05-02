@@ -198,6 +198,7 @@
                 transclude: true,
                 scope: {
                     link: '@?link',
+                    queryParams: '=?queryParams',
                     onClick: '&?onClick'
                 },
                 bindToController: true,
@@ -211,7 +212,7 @@
                             hoverEditLink.onClick();
                         } else {
                             // will add '/' if missing
-                            $location.path(hoverEditLink.link);
+                            $location.path(hoverEditLink.link).search(hoverEditLink.queryParams);
                         }
                     }
                 }]
