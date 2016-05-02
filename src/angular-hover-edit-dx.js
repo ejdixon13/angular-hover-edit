@@ -212,7 +212,12 @@
                             hoverEditLink.onClick();
                         } else {
                             // will add '/' if missing
-                            $location.path(hoverEditLink.link).search(hoverEditLink.queryParams);
+                            if((typeof hoverEditLink.queryParams === 'object') && (hoverEditLink.queryParams !== null)) {
+                                $location.path(hoverEditLink.link).search(hoverEditLink.queryParams);
+                            }
+                             else {
+                                $location.path(hoverEditLink.link);
+                            }
                         }
                     }
                 }]
